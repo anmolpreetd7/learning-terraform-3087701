@@ -3,47 +3,48 @@ variable "instance_type" {
   default     = "t3.nano"
 }
 
-  variable "ami_filter" {
-    description = "Name filter and owner for AMI"
+variable "ami_filter" {
+  description = "Name filter and owner for AMI"
     
-    type = object {(
-    name = string
-    owner = string
+  type = object {(
 
-    )}
+  name = string
+  owner = string
 
-    default = {
-    name = "bitnami-tomcat-*-x86_64-hvm-ebs-nami"
-    owner = "979382823631"
+  )}
+
+  default = {
+  name = "bitnami-tomcat-*-x86_64-hvm-ebs-nami"
+  owner = "979382823631"
   }
 
 }
 
-  variable "environment" {
-    description = "Deployment environment"
+variable "environment" {
+  description = "Deployment environment"
     
-    type = object{(
-      name = string
-      network_prefix = string
-    )}
+  type = object{(
+  name = string
+  network_prefix = string
+  )}
 
-    default = {
-      name = "dev"
-      network_prefix = "10.0"
-    }
+  default = {
+  name = "dev"
+  network_prefix = "10.0"
+  }
 }
 
-  variable "asg_min" {
+variable "asg_min" {
 
-    description "Minimum instance count for ASG"
-    default = 1
+  description "Minimum instance count for ASG"
+  default = 1
 }
 
 
-  variable "asg_max" {
+variable "asg_max" {
 
-    description "Maximum instance count for ASG"
-    default = 2
+  description "Maximum instance count for ASG"
+  default = 2
 }
 
 
