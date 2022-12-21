@@ -6,12 +6,12 @@ variable "instance_type" {
 variable "ami_filter" {
   description = "Name filter and owner for AMI"
     
-  type = object {(
+  type = object ({
 
   name = string
   owner = string
 
-  )}
+  })
 
   default = {
   name = "bitnami-tomcat-*-x86_64-hvm-ebs-nami"
@@ -23,10 +23,10 @@ variable "ami_filter" {
 variable "environment" {
   description = "Deployment environment"
     
-  type = object{(
+  type = object ({
   name = string
   network_prefix = string
-  )}
+  })
 
   default = {
   name = "dev"
